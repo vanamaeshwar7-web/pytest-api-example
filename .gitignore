@@ -1,7 +1,9 @@
-__pycache__
-.pytest_cache
-test_scratch.py
-pet_scratch.py
-store_scratch.py
-report.html
-style.css
+
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

@@ -1,50 +1,68 @@
-# Sample API Test Using Pytest and SwaggerUI
+# Candidate Assessment: Spec-Driven Development With Codegen Tools
 
-## System Requirements
+This assessment evaluates how you use modern code generation tools (for example `5.2-Codex`, `Claude`, `Copilot`, and similar) to design, build, and test a software application using a spec-driven development pattern. You may build a frontend, a backend, or both.
 
-python 3.x.x
+## Goals
+- Build a working application with at least one meaningful feature.
+- Create a testing framework to validate the application.
+- Demonstrate effective use of code generation tools to accelerate delivery.
+- Show clear, maintainable engineering practices.
 
+## Deliverables
+- Application source code in this repository.
+- A test suite and test harness that can be run locally.
+- Documentation that explains how to run the app and the tests.
 
-## Setup
+## Scope Options
+Pick one:
+- Frontend-only application.
+- Backend-only application.
+- Full-stack application.
 
-* Install Visual Studio Code (or any editor)
+Your solution should include at least one real workflow, for example:
+- Create and view a resource.
+- Search or filter data.
+- Persist data in memory or storage.
 
-https://code.visualstudio.com/download
+## Rules
+- You must use a code generation tool (for example `5.2-Codex`, `Claude`, or similar). You can use multiple tools.
+- You must build the application and a testing framework for it.
+- The application and tests must run locally.
+- Do not include secrets or credentials in this repository.
 
+## Evaluation Criteria
+- Working product: Does the app do what it claims?
+- Test coverage: Do tests cover key workflows and edge cases?
+- Engineering quality: Clarity, structure, and maintainability.
+- Use of codegen: How effectively you used tools to accelerate work.
+- Documentation: Clear setup and run instructions.
 
-* Install Python 3.x.x (latest)
+## What to Submit
+- When you are complete, put up a Pull Request against this repository with your changes.
+- A short summary of your approach and tools used in your PR submission
+- Any additional information or approach that helped you.
 
-https://www.python.org/downloads/
+# Task Manager API
 
-* Create a project in vscode, open the terminal
+A simple backend application built using a spec-driven development approach.
+The API supports creating, listing (with filtering and search), updating, and deleting tasks, with data persisted locally using SQLite.
 
+The project demonstrates:
+
+Clear API specification (SPEC.md)
+
+Clean FastAPI + SQLAlchemy architecture
+
+Automated test coverage with pytest
+
+Local development and execution
+## Tech Stack
+- Python 3.11
+- FastAPI
+- SQLite
+- SQLAlchemy
+- Pytest
+
+## Run the application
 ```bash
-git clone https://github.com/automationExamples/pytest-api-example.git
-pip install requests pytest pyhamcrest jsonschema pytest-html flask_restx flask
-```
-
-### Recommended vscode extensions
-
-Python, Pylance, autopep8
-
-
-## Instructions
-* You'll need to open two terminal instances, one for the local server, one to run pytest
-```bash
-python app.py
-```
-* Once it is running, you can access the SwaggerUI in a browser via http://localhost:5000 OR http://127.0.0.1:5000
-* To run the test, use the following command. When the tests complete, a 'report.html' is generated
-```bash
-pytest -v --html=report.html
-```
-* It is not expected that you complete every task, however, please give your best effort 
-* You will be scored based on your ability to complete the following tasks:
-
-- [ ] Install and setup this repository on your personal computer
-- [ ] Complete the automation tasks listed below
-
-### Tasks
-- [ ] Extend and fix the 3 tests from [test_pet.py](test_pet.py#1). There are TODO instructions for each test listed in the file
-- [ ] Create the PATCH test for [test_store.py](test_store.py#1). There are TODO instructions for test along with optional tasks
-- [ ] Take note of any bugs you may have found
+python -m uvicorn app.main:app --reload
